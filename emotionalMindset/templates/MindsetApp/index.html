@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    {% load static %}
+    <!--Css-->
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>Emotional Mindset</title>
+  </head>
+  <body>
+    <header id="header" class="fixed-top">
+      <div class="container d-flex aligin-items-center">
+          <h1 class="logo mr-auto"><a href="/">Emotional Mindset</a></h1>
+
+          <nav class="nav-menu d-none d-lg-block">
+              <ul>
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/hospital">Hospitals</a></li>
+                  <li><a href="/contact">Contact us</a></li>
+              </ul>
+          </nav>
+
+          <a href="#popup-box" class="get-started-btn scrollto" id="questions">Take the Quiz</a>    
+      </div>
+      <div id="popup-box" class="modal">
+        <div class="content">
+            <h1 style="color: violet;">Hello and Welcome to Emotional Mindset we are really delighted that you trust with this test</h1>
+            <h5> Before you start the test. We would like you look at the consent form below very attentively. You click on the ok button would mean that you have give us the consent.</h5>
+            <p>1. I have read the Participant’s Information Sheet and I understand my role in this research.</p>
+            <p>2. I understand that my personal details will remain confidential.</p>
+            <p>3. I understand that the data being collected is just for study purposes and will remain confidential and will be shown in an academic report with anonymity.</p>
+            <p>4. I understand that data will be stored through the website which has questions.</p>
+            <p>5. I understand that I am free to withdraw from the study at any time</p>
+            <p>6. I understand that my data and result will be disclosed to the research team.</p>
+            <p><b>7. I understand that the result obtains from this research is not 100% accurate. </b></p>
+            <p>8. I understand that this project is just for study purposes and they do not have any medical degree to be precise about the result obtained from the survey.</p>
+            <p>9. I hereby agree on being a part of this research project.</p>
+            
+            <a href="" class="box-close">X</a>
+            <a href="/patient_register" class="btn btn-secondary">Ok</a>
+            </a>
+        </div>
+      </div>
+  </header>
+  <main id="main">
+      <div class="background_image">
+          <img src="{% static 'bg.jpg' %}" alt="frontpage background">
+          <div class="centered">
+              <h2>WE ARE FOR HERE YOU</h2>
+              <p>Your emotion is the utmost for us.</p>
+          </div>
+      </div>
+      <div class="container" id="about_part">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="img-box" id="photo_part">
+                      <img src="{% static 'aboutus.jpg' %}" alt="aboutus thumbnail">
+                    </div>
+                  
+              </div>
+              <div class="col-md-6">
+                  <div class="heading_container">
+                      <p>
+                        About <span>Us</span>
+                      </p>
+                    </div>
+                  <p><b>Welcome to Emotional Mindset.</b> The site is for the people who are afraid of knowing if they are doing fine.
+                    This site is for people who want to learn. This site is for people who want to know about their mental health.
+                    This site is for people who want to know about their emotional health.Our website is intended to act as a comprehensive resource center for people looking to improve their mental health.</p>
+                      <a href="/about" class="btn btn-outline-info">
+                          + Read More
+                        </a>
+              </div>
+          </div>
+      </div>
+  <div class="container-fulid">
+      <div id="center">
+          <h1>Take a quize</h1>
+      <a href="#popup-box" id="questions">Click Here</a>
+      </div>
+      
+  </div>
+  <div class="container">
+      <div class="center_text">
+          <h1>Hospital Recommendation</h1>
+      </div>
+      <div class="row">
+        {% for data in hospital %}
+              <div class="shadow-lg col-md-4" id="hospital_part">
+                  <div class="inner_image">
+                      <img src="{{ data.picture.url }}" alt="hospital thumbnail">
+                      
+                  </div>
+                  <div class="hospital">
+                      <p>{{ data.name }}</p>
+                      <p>{{ data.address }}</p>
+                  </div>
+              </div>
+        {% endfor %}
+        <div class="col-12" id="hospital_button">
+            <a href="/hospital" class="btn btn-primary">View All</a>
+        </div>
+      </div>
+  </div>
+  </main>
+  
+  <footer id="footer">
+    <div class="container-fulid">
+        <h1>Emotional Mindset</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/hospital">Hospital</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <div id="social_media">
+            <!-- <img src="{% static 'instagram.svg' %}" alt="instagram_logo"> -->
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <!-- <img src="{% static 'facebook.png' %}" alt="facebook_logo"> -->
+            <!-- <img src="{% static 'twitter.png' %}" alt="twitter_logo"> -->
+        </div>
+        <p>Copyright 2023 Emotional Mindset</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,844 @@
+/*CSS*/
+body{
+    font-family: "Open sans", sans-serif;
+    color: black;
+}
+a{
+    color: #5c9f24;
+}
+a:hover{
+    color: #74c92d;
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Roboto", sans-serif;
+}
+#header{
+    background: #4782f7;
+    padding: 15px;
+}
+#header .logo{
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+#header .logo a{
+    color: #fff;
+}
+/*navigation*/
+.nav-menu ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+.nav-menu > ul{
+    display: flex;
+}
+.nav-menu > ul > li{
+    position: relative;
+    white-space: nowrap;
+    padding: 10px 0 10px 22px;
+}
+.nav-menu a{
+    display: block;
+    position: relative;
+    color: rgba(255,255,255,0.7);
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Roboto",sans-serif;
+    padding: 0 4px;
+    text-transform: uppercase;
+}
+.nav-menu > ul > li > a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #005f23;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-menu a:hover::before,
+.nav-menu li:hover > a::before,
+.nav-menu .active > a::before{
+    visibility: visible;
+    width: 100%;
+}
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a{
+    color: #fff;
+}
+/*Get Started*/
+.get-started-btn{
+    margin-left: 25px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 13px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: "Poppins",sans-serif;
+    border: 2px solid #005f23;
+}
+.get-started-btn:hover{
+    background: #036b7e;
+    color: #fff;
+}
+/*responsive*/
+@media (max-width: 768px){
+    .get-started-btn{
+        margin: 0 48px 0 0;
+        padding: 6px 18px;
+    }
+}
+/*mobile navigation*/
+.mobile-nav-toggle{
+    position: fixed;
+    right: 15px;
+    top: 18px;
+    z-index: 9998;
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: 0;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+.mobile-nav-toggle i{
+    color: #fff;
+}
+.mobile-nav{
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+    overflow-y: auto;
+    background: #fff;
+    transition: ease-in-out 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.mobile-nav-overly{
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(17,17,17,0.6);
+    display: none;
+    transition: ease-in-out 0.2s;
+}
+.mobile-nav-active{
+    overflow: hidden;
+}
+.mobile-nav-active .mobile-nav{
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-nav *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.mobile-nav a{
+    display: block;
+    position: relative;
+    color: #2a2a2a;
+    font-weight: 500;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 15px;
+}
+.mobile-nav a:hover,
+.mobile-nav .active > a,
+.mobile-nav li:hover > a{
+    color: #005f23;
+    text-decoration: none;
+}
+.mobile-nav a:hover{
+    background: black;
+    border:  2px solid black;
+    font-size: 19px;
+}
+.box {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+p {
+    font-size: 17px;
+    align-items: center;
+}
+.box a {
+    display: inline-block;
+    background-color: #fff;
+    /* padding: 15px; */
+    border-radius: 3px;
+}
+.modal {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* position: absolute; */
+    
+    background: rgba(142, 130, 130, 0.7);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+.content {
+    position: absolute;
+    background: white;
+    width: 800px;
+    padding: 2em 3em;
+    border-radius: 4px;
+}
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+.box-close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #fe0606;
+    text-decoration: none;
+    font-size: 30px;
+}
+/*body*/
+#main{
+    margin-top: 70px;
+    position: relative;
+   
+}
+.background_image{
+    height: 60%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+  color: black;
+}
+.background_image img{
+    height: 600px;
+    width: 100%;
+    opacity: 60%;
+}
+.centered {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.centered h2{
+    font-size: 20px;
+    /* font-style: italic; */
+    font-weight: 900;
+    font-family: Cambria;
+}
+.centered p{
+    font-size: 18px;
+    font-family: Georgia;
+}
+
+#photo_part img{
+    width: 50%;
+    height: 50%;
+    border-radius: 2em;
+}
+.heading_container p{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 700px;
+    font-size: 30px;
+    font-family: Cambria;
+}
+#center{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 700px;
+    font-size: 30px;
+    font-family: Cambria;
+    padding: 20px 0px 20px 0px;
+    background: #5d87d9;
+}
+#center div{
+    font-size: 20px;
+    font-family: Cambria;
+}
+.center_text{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.center_text h1{
+    font-size: 30px;
+    font-weight: 400;
+    font-family: Cambria;
+}
+#center a{
+    text-decoration: none;
+    color: black;
+}
+#hospital_part{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+#hospital_button a{
+    background: #5d87d9;
+    border: none;
+    border-radius: 2em;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    font-size: 20px;
+    font-family: Cambria;
+    margin-left: 50%;
+    margin-bottom: 50px;
+}
+.inner_image img{
+    width: 60%;
+    height: 70%;
+}
+.hospital{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+#footer{
+    height: 600px;
+    width: 100%;
+    background-color: #2a2a2a;
+}
+#footer .footer_logo{
+    text-align: center;
+    margin-top: 50px;
+}
+#footer .footer_logo img{
+    width: 200px;
+    height: 100px;
+}
+#footer h1{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: Cambria;
+    padding-top: 2%;
+}
+#footer ul{
+    text-align: center;
+    margin-top: 45px;
+}
+#footer ul li{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: medium;
+}
+#footer ul li a{
+    text-decoration: none;
+    color: white;
+}
+#footer ul li a:hover{
+    color: grey;
+}
+#footer p{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: Cambria;
+}
+#footer #social_media{
+    text-align: center;
+    margin-top: 5px;
+}
+#footer #social_media i{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: white;
+}
+#footer #social_media i:hover{
+    color: grey;
+}
+#hospital_detail{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    text-align: justify;
+    width: 100%;
+    height: 100%;
+}
+#hospital_des{
+    text-align: justify;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-family: Cambria;
+}
+#hospital_detail h1{
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 200;
+    font-family: Cambria;
+}
+#hospital_detail p{
+    text-align: center;
+    font-size: 18px;
+    font-family: Cambria;
+}
+#hospital_detail img{
+    width: 60%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
+}
+#contact_image{
+    height: 60%;
+    width: 100%;
+    position: relative;
+    margin-top: 5%;
+}
+#contact_image img{
+    height: 600px;
+    width: 100%;
+    opacity: 80%;
+    
+}
+#contact_image p{
+    font-size: 30px;
+    font-family: Cambria;
+    color: black;
+    font-weight: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#contact_form{
+    height: 50%;
+    width: 100%;
+    margin-left: 20%;
+    position: relative;
+    margin-top: 5%;
+}
+/* .contact_centred {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contact_centred h4{
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Lucida Sans', sans-serif;
+}
+.contact_centred p{
+    font-size: 18px;
+    font-family: Georgia;
+} */
+#contact_form form{
+    margin-left: 20%;
+    margin-top: 5%;
+} 
+#contact_form  p{
+    font-size: 22px;
+    font-family: 'Lucida Sans', sans-serif;
+    color: black;
+    font-weight: 1000;
+    margin-bottom: 20px;
+    margin-left: 12%;
+}
+#contact_form form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}  
+#contact_form form textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#contact_form form button{
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    background-color: #5d87d9;
+    color: white;
+    font-size: 20px;
+    font-family: Cambria;
+}
+#contact_form form button:hover{
+    background-color: #2a2a2a;
+    color: white;
+}
+#contact_form form label{
+    font-size: 16px;
+    font-style: italic;
+    font-family: 'Lucida Sans', sans-serif;
+}
+#output_brief{
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+#output_brief h1{
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+}
+#output_brief p{
+    text-align: center;
+    font-size: 18px;
+    font-family: Cambria;
+    margin-top: 20px;
+}
+#output_result{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#output_result h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#output_result p{
+    font-size: 18px;
+    font-family: Cambria;
+    margin-top: 10px;
+}
+#output_content {
+    margin-bottom: 50px;
+}
+#output_content p{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#output_hospital{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#output_hospital h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#output_hospital form{
+    margin-top: 5%;
+}
+#output_hospital form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#question_detail{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+/* .disease{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    box-shadow: #2a2a2a;
+} */
+#question_detail h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#question_detail p{
+    font-size: 18px;
+    font-family: Cambria;
+    margin-top: 10px;
+}
+#question_detail a{
+    font-size: 16px;
+    font-family: Cambria;
+    margin-top: 10px;
+    padding-right: 2px;
+    color: #5d87d9;
+    margin-bottom: 15px;
+}
+#image_question img{
+    height: 100px;
+    width: 100px;
+    opacity: 80%;
+}
+
+#disease_banner{
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+#disease_banner img{
+    height: 600px;
+    width: 100%;
+    opacity: 80%;
+}
+.disease_name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.disease_name h2{
+    font-size: 70px;    
+    font-weight: 500;
+    font-family: Cambria;
+    color: rgb(155, 143, 185);
+}
+.image_disese{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+   
+    box-shadow: #2a2a2a;
+}
+.image_disese img{
+    height: 400px;
+    width: 400px;
+    opacity: 80%;
+}
+#description_disease{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+#description_disease p{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+.disease_symptoms{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+.disease_symptoms h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+.disease_symptoms p{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+.disease_treatment{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+.disease_treatment p{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+.disease_treatment h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#patient_name h1{
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: Cambria;
+    text-align: center;
+}
+#patient_name p{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Cambria;
+    text-align: center;
+}
+
+#question_form h4{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#question_form form{
+    margin-top: 2%;
+    margin-left: 20%;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Cambria;
+}
+#question_form button{
+    margin-top: 2%;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Cambria;
+    width: 150px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    background-color: #4782f7;
+}
+#patient_form{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+#patient_form form{
+    margin-top: 2%;
+    margin-left: 20%;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Cambria;
+}
+
+#patient_form form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+#patient_form form button{
+    margin-top: 2%;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Cambria;
+    width: 150px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    background-color: #4782f7;
+}
+#recommend_detail{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+#recommend_detail h2{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#recommend_detail ul{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+    list-style: none;
+}
+#recommend_detail ul li{
+    margin-bottom: 10px;
+}
+#recommend_hospital p{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
+#about_banner{
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+#about_banner img{
+    height: 600px;
+    width: 100%;
+    opacity: 80%;
+}
+.about_name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.about_name h2{
+    font-size: 70px;    
+    font-weight: 500;
+    font-family: Cambria;
+    color: rgb(117, 161, 200);
+}
+#about_thumbnail{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+#about_thumbnail img{
+    height: 400px;
+    width: 400px;
+    opacity: 80%;
+}
+#about_description{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+}
+#about_description p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Cambria;
+    margin-bottom: 10px;
+}
